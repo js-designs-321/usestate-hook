@@ -6,11 +6,16 @@ import React from "react";
 
 function App() {
 
-  
+  const[time, state] = React.useState(new Date().toLocaleTimeString()); 
+
+  function getTime(){
+    state(new Date().toLocaleTimeString()); 
+  }
+
   return (
     <div className="container">
-      <h1>TIME</h1>
-      <button>Get Time</button>
+      <h1>{time}</h1>
+      <button onClick={getTime}>Get Time</button>
     </div>
   );
 }
